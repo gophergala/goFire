@@ -26,7 +26,7 @@ func main() {
 	store := cookiestore.New([]byte(os.Getenv("cookiestore")))
 
 	//init db
-	db, err := sqlx.Connect("mysql", os.Getenv("connectionstring"))
+	//db, err := sqlx.Connect("mysql", os.Getenv("connectionstring"))
 
 	//if err != nil {
 	//log.Print(err)
