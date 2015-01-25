@@ -256,6 +256,15 @@ body > div > div > a > h2 > span {
 	min-height: 175px;
 }
 
+.owner-comment {
+	padding: 30px;
+	background: #fff;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 2px dashed #ddd;
+}
+
 .btn-small {
 	font-size: 11px;
 	padding-right: 10px;	
