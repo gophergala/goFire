@@ -1,4 +1,4 @@
-# goFire - Formerly idstc
+# goFire
 
 Agile development management dashboard with emphasis on administrative-level analysis.
 
