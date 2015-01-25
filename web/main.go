@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 
@@ -24,15 +25,15 @@ type ctx struct {
 
 func main() {
 
-	store := cookiestore.New([]byte(os.Getenv("cookiestore")))
+	store := cookiestore.New([]byte(os.Getenv("COOKIESTORE")))
 
 	//init db
-	//db, err := sqlx.Connect("mysql", os.Getenv("connectionstring"))
+	db, err := sqlx.Connect("mysql", os.Getenv("CONNECTIONSTRING"))
 
-	//if err != nil {
-	//log.Print(err)
-	//log.Fatal("Error Initializing Database...")
-	//}
+	if err != nil {
+		log.Print(err)
+		log.Fatal("Error Initializing Database...")
+	}
 
 	//setup render
 	ren := render.New(render.Options{
@@ -41,7 +42,7 @@ func main() {
 		IsDevelopment: true,
 	})
 
-	session := ctx{nil, ren, nil}
+	session := ctx{db, ren, nil}
 
 	//create routers
 	router := mux.NewRouter()
@@ -49,7 +50,7 @@ func main() {
 	n := negroni.Classic()
 
 	//register session middleware
-	n.Use(sessions.Sessions("idstc", store))
+	n.Use(sessions.Sessions("goFire", store))
 	n.UseHandler(router)
 
 	//not found handler

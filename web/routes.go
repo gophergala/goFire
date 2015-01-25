@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"goFire/model"
@@ -35,6 +36,13 @@ func (c *ctx) People(w http.ResponseWriter, r *http.Request) {
 
 func (c *ctx) Sprints(w http.ResponseWriter, r *http.Request) {
 	ValidateRoute("sprints", w, r, "")
+
+	var sprint model.Sprint
+	err := c.Database.Get(&sprint, "SELECT * FROM Sprint LIMIT 1;")
+
+	fmt.Fprint(w, sprint)
+
+	fmt.Fprint(w, err)
 
 	p := model.Page{
 		"sprints",
