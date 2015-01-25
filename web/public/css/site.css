@@ -7,7 +7,7 @@ body, html {
 .spacing {
 	height:1px;
 	backgroudn: transparent;
-	padding: 15px;
+	padding: 5px;
 }
 
 header {
@@ -171,6 +171,21 @@ body > div > div > a > h2 > span {
 	margin-top: 10px;
 }
 
+/* dashboard */
+.dashboard-grid-wrapper {
+	width: 850px;
+	height: 400px;
+	overflow: scroll;
+}
+
+.dashboard-grid-wrapper table {
+	min-width: 100%;
+}
+
+.dashboard-grid-wrapper th, .dashboard-grid-wrapper td {
+	padding:  5px 8px;
+	font-size: 12px;
+}
 .text-muted {
 	font-size: 14px;
 	color: #aaa;
