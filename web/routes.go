@@ -127,3 +127,18 @@ func (c *ctx) AddSprint(w http.ResponseWriter, r *http.Request) {
 
 	c.r.HTML(w, http.StatusOK, "home/addsprint", p)
 }
+
+func (c *ctx) AddMilestone(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id, _ := vars["id"]
+
+	ValidateRoute("sprints/milestones/add", w, r, id)
+
+	p := model.Page{
+		"Add Milestone",
+		"projects",
+		nil,
+	}
+
+	c.r.HTML(w, http.StatusOK, "home/addmilestone", p)
+}
