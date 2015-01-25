@@ -161,6 +161,17 @@ i {
 	-moz-border-radius: 3px;  
 }
 
+/* project header timespan */
+body > div > div > a > h2 > span {
+	position: relative;
+	top: 9px;
+}
+
 .project h2 {
 	margin-top: 10px;
+}
+
+.text-muted {
+	font-size: 14px;
+	color: #aaa;
 }
