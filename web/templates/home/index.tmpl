@@ -185,8 +185,9 @@
 
 	function BuildProjectChart(data) {
 		// Get the context of the canvas element we want to select
-		var ctx = document.getElementById("chtProject").getContext("2d");
-		var newChart = new Chart(ctx).Line(data);			
+		var ctx = document.getElementById("chtProject").getContext("2d");		
+		ctx.canvas.width  = document.getElementById("main-container").offsetWidth * 0.40;		
+		var newChart = new Chart(ctx).Line(data);		
 	}
 	
 	BuildProjectChart(data);
