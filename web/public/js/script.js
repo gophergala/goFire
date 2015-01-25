@@ -1,7 +1,8 @@
 var div = document.getElementById("addTask");
-var select = document.getElementById("milestoneSelect")
-var clone = select.cloneNode(true);
+var selectDiv = document.getElementById("milestoneSelectDiv")
+var clone = selectDiv.cloneNode(true);
 
+console.log(clone);
 function addTaskSelect() {
-    div.innerHTML = div.innerHTML + clone;
+    $("addTask").append(clone);
 }
