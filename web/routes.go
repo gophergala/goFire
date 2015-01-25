@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"idstc/model"
+	"goFire/model"
 
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"

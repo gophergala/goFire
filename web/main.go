@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"idstc/model"
+	"goFire/model"
 
 	"github.com/codegangsta/negroni"
 	_ "github.com/go-sql-driver/mysql"
