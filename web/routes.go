@@ -33,31 +33,31 @@ func (c *ctx) People(w http.ResponseWriter, r *http.Request) {
 	c.r.HTML(w, http.StatusOK, "home/people", p)
 }
 
-func (c *ctx) Projects(w http.ResponseWriter, r *http.Request) {
-	ValidateRoute("projects", w, r, "")
+func (c *ctx) Sprints(w http.ResponseWriter, r *http.Request) {
+	ValidateRoute("sprints", w, r, "")
 
 	p := model.Page{
-		"projects",
-		"projects",
+		"sprints",
+		"sprints",
 		nil,
 	}
 
-	c.r.HTML(w, http.StatusOK, "home/projects", p)
+	c.r.HTML(w, http.StatusOK, "home/sprints", p)
 }
 
-func (c *ctx) ProjectDetail(w http.ResponseWriter, r *http.Request) {
+func (c *ctx) SprintDetail(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, _ := vars["id"]
 
-	ValidateRoute("projects/detail", w, r, id)
+	ValidateRoute("sprints/detail", w, r, id)
 
 	p := model.Page{
-		"project detail",
-		"projects",
+		"sprint information",
+		"sprints",
 		nil,
 	}
 
-	c.r.HTML(w, http.StatusOK, "home/projectdetail", p)
+	c.r.HTML(w, http.StatusOK, "home/sprintdetails", p)
 }
 
 func (c *ctx) Analytics(w http.ResponseWriter, r *http.Request) {

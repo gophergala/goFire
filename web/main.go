@@ -58,8 +58,8 @@ func main() {
 	//open routes
 	router.HandleFunc("/", session.Home)
 	router.HandleFunc("/people", session.People)
-	router.HandleFunc("/projects", session.Projects)
-	router.HandleFunc("/projects/detail/{id:[0-9]+}", session.ProjectDetail)
+	router.HandleFunc("/sprints", session.Sprints)
+	router.HandleFunc("/sprints/detail/{id:[0-9]+}", session.SprintDetail)
 	router.HandleFunc("/account", session.Account)
 	router.HandleFunc("/analytics", session.Analytics)
 	router.HandleFunc("/projects/tasks/add/{id:[0-9]+}", session.AddTask).Methods("GET")

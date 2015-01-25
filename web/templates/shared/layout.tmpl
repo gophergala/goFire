@@ -14,7 +14,7 @@
 		<div class="container">
 			<div {{if eq .Page "dashboard" }} class="pull-left dashboard selected" {{ else }} class="pull-left dashboard" {{ end }}>
 				<a href="/">
-					<i class="ion-fireball"></i>
+					<span class="goFire">go</span> <i class="ion-fireball"></i>
 				</a>
 			</div>
 
@@ -26,10 +26,10 @@
 						</span>
 					</a>
 				</li>
-				<li {{if eq .Page "projects" }} class="menu-item selected" {{ else }} class="menu-item" {{ end }}>
-					<a href="/projects">
+				<li {{if eq .Page "sprints" }} class="menu-item selected" {{ else }} class="menu-item" {{ end }}>
+					<a href="/sprints">
 						<span>
-							Projects
+							Sprints
 						</span>
 					</a>
 				</li>
