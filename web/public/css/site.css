@@ -165,6 +165,11 @@ i {
 	background: #f5f5f5;
 }
 
+.center-text {
+	width: 100%;
+	text-align: center;
+}
+
 /* project header timespan */
 body > div > div > a > h2 > span {
 	position: relative;
@@ -188,6 +193,42 @@ body > div > div > a > h2 > span {
 
 .dashboard-grid-wrapper table {
 	min-width: 100%;
+}
+
+.project-detail-header {
+	border-bottom: 1px solid #ddd;
+	margin: 0 20px;
+}
+
+.tasks-on-milestone {
+	margin-top: 25px;
+}
+
+.milestone {
+	padding: 20px;
+}
+
+.milestone-header {
+	display: block;
+}
+
+.milestone-task {
+	background: #fff;
+	padding: 30px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+
+.milestone-task:hover {
+	background: #f5f5f5;
+	cursor: pointer;
+	padding: 30px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+
+.milestone-body {
+	margin-top: 75px;
 }
 
 .dashboard-grid-wrapper th, .dashboard-grid-wrapper td {
