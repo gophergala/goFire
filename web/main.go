@@ -58,6 +58,7 @@ func main() {
 	router.HandleFunc("/", session.Home)
 	router.HandleFunc("/people", session.People)
 	router.HandleFunc("/projects", session.Projects)
+	router.HandleFunc("/projects/detail/{id:[0-9]+}", session.ProjectDetail)
 	router.HandleFunc("/account", session.Account)
 	router.HandleFunc("/analytics", session.Analytics)
 

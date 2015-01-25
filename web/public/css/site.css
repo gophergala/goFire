@@ -156,6 +156,7 @@ i {
 	border: 1px solid #ddd;
 	cursor: pointer;
 	border-radius: 3px;
+	display: block;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;  
 }

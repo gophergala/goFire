@@ -26,9 +26,16 @@ func RedirectToError(w http.ResponseWriter, r *http.Request, err error) {
 	http.Redirect(w, r, fmt.Sprint("/error?err=", err.Error()), http.StatusFound)
 }
 
-func ValidateRoute(s string, w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/"+s {
-		NotFound(w, r)
-		return
+func ValidateRoute(s string, w http.ResponseWriter, r *http.Request, id string) {
+	if id != "" {
+		if r.URL.Path != "/"+s+"/"+id {
+			NotFound(w, r)
+			return
+		}
+	} else {
+		if r.URL.Path != "/"+s {
+			NotFound(w, r)
+			return
+		}
 	}
 }

@@ -3,12 +3,13 @@ package main
 import (
 	"net/http"
 
+	"github.com/gorilla/mux"
 	"github.com/unrolled/render"
 	"idstc/model"
 )
 
 func (c *ctx) Home(w http.ResponseWriter, r *http.Request) {
-	ValidateRoute("", w, r)
+	ValidateRoute("", w, r, "")
 
 	p := model.Page{
 		"dashboard",
@@ -20,7 +21,7 @@ func (c *ctx) Home(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *ctx) People(w http.ResponseWriter, r *http.Request) {
-	ValidateRoute("people", w, r)
+	ValidateRoute("people", w, r, "")
 
 	p := model.Page{
 		"people",
@@ -32,7 +33,7 @@ func (c *ctx) People(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *ctx) Projects(w http.ResponseWriter, r *http.Request) {
-	ValidateRoute("projects", w, r)
+	ValidateRoute("projects", w, r, "")
 
 	p := model.Page{
 		"projects",
@@ -43,8 +44,23 @@ func (c *ctx) Projects(w http.ResponseWriter, r *http.Request) {
 	c.r.HTML(w, http.StatusOK, "home/projects", p)
 }
 
+func (c *ctx) ProjectDetail(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id, _ := vars["id"]
+
+	ValidateRoute("projects/detail", w, r, id)
+
+	p := model.Page{
+		"project detail",
+		"projects",
+		nil,
+	}
+
+	c.r.HTML(w, http.StatusOK, "home/projectdetail", p)
+}
+
 func (c *ctx) Analytics(w http.ResponseWriter, r *http.Request) {
-	ValidateRoute("analytics", w, r)
+	ValidateRoute("analytics", w, r, "")
 
 	p := model.Page{
 		"analytics",
@@ -56,7 +72,7 @@ func (c *ctx) Analytics(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *ctx) Account(w http.ResponseWriter, r *http.Request) {
-	ValidateRoute("account", w, r)
+	ValidateRoute("account", w, r, "")
 
 	p := model.Page{
 		"account",
