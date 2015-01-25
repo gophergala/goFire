@@ -2,7 +2,13 @@
     <form id="milestoneForm">
         <div class="row">
             <div class="twelve columns">
-                <label for="milestoneSelect">Milestone</label>
+                <label for="titleInput">Title</label>
+                <input class="u-full-width" type="text" placeholder="Title" id="titleInput"></input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <label for="milestoneSelect">Task</label>
                 <select class="u-full-width" id="milestoneSelect">
                 <option value="Option 1">Task 1</option>
                 <option value="Option 2">Task 2</option>
@@ -10,5 +16,7 @@
                 </select>
             </div>
         </div>
+
+        <input class="button-primary" type="submit" value="Add task(s)"></input>
     </form>
 </div>
