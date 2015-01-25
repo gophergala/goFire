@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"os"
 
+	"idstc/model"
+
 	"github.com/codegangsta/negroni"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/goincremental/negroni-sessions"
@@ -12,7 +14,6 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"github.com/unrolled/render"
-	"idstc/model"
 )
 
 type ctx struct {
@@ -61,6 +62,7 @@ func main() {
 	router.HandleFunc("/projects/detail/{id:[0-9]+}", session.ProjectDetail)
 	router.HandleFunc("/account", session.Account)
 	router.HandleFunc("/analytics", session.Analytics)
+	router.HandleFunc("/projects/tasks/add/{id:[0-9]+}", session.AddTask).Methods("GET")
 
 	n.Run(
 		fmt.Sprint(":", os.Getenv("PORT")),

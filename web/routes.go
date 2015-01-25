@@ -3,9 +3,10 @@ package main
 import (
 	"net/http"
 
+	"idstc/model"
+
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"
-	"idstc/model"
 )
 
 func (c *ctx) Home(w http.ResponseWriter, r *http.Request) {
@@ -95,4 +96,19 @@ func NotFound(w http.ResponseWriter, r *http.Request) {
 	}
 
 	ren.HTML(w, http.StatusOK, "404", p)
+}
+
+func (c *ctx) AddTask(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id, _ := vars["id"]
+
+	ValidateRoute("projects/tasks/add", w, r, id)
+
+	p := model.Page{
+		"Add Task",
+		"projects",
+		nil,
+	}
+
+	c.r.HTML(w, http.StatusOK, "home/addtask", p)
 }
