@@ -12,7 +12,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"github.com/unrolled/render"
-	"idstc.com/model"
+	"idstc/model"
 )
 
 type ctx struct {

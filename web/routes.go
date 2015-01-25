@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/unrolled/render"
-	"idstc.com/model"
+	"idstc/model"
 )
 
 func (c *ctx) Home(w http.ResponseWriter, r *http.Request) {
