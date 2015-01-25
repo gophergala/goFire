@@ -2,11 +2,13 @@ package main
 
 import (
 	"net/http"
-
+	
+	"time"
 	"goFire/model"
 
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"
+	"github.com/jmoiron/sqlx"
 )
 
 func (c *ctx) Home(w http.ResponseWriter, r *http.Request) {
@@ -157,3 +159,43 @@ func (c *ctx) AddMilestone(w http.ResponseWriter, r *http.Request) {
 
 	c.r.HTML(w, http.StatusOK, "home/addmilestone", p)
 }
+
+/* POST Routes */
+
+//func (c *ctx) POSTAddSprint(w http.ResponseWriter, r *http.Request) {
+//	varx := mux.Vars(r)
+//	id, _ := varx["id"]
+//	
+//	r.ParseForm()
+//	name, _ := r.PostForm["titleInput"]
+//	description, _ := r.PostForm["descriptionTextarea"]
+//	
+//	time := time.Now()
+//
+//	s := model.Sprint{
+//		1,
+//		name,
+//		description,
+//		1,
+//		time,
+//		time,
+//	}
+//	
+//	db, err := sqlx.Connect("mysql", )
+//    if err != nil {
+//		return;
+//    }
+//
+//    tx := db.MustBegin()
+//    tx.MustExec("INSERT INTO Sprint (SprintTitle, Description, CompanyID, StartDate, EndDate) VALUES ($1, $2, $3, $4, $5)", s.SprintTitle, s.Description, s.CompanyID, s.StartDate, s.EndDate)
+//    
+//	ValidateRoute("sprints/add", w, r, id)
+//	
+//	p := model.Page{
+//		"Add Sprint",
+//		"projects",
+//		nil,
+//	}
+//
+//	c.r.HTML(w, http.StatusOK, "home/addsprint", p)
+//}

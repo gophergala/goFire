@@ -66,6 +66,9 @@ func main() {
 	router.HandleFunc("/sprints/tasks/{id:[0-9]+}", session.Task)
 	router.HandleFunc("/sprints/add/{id:[0-9]+}", session.AddSprint).Methods("GET")
 	router.HandleFunc("/sprints/milestones/add/{id:[0-9]+}", session.AddMilestone).Methods("GET")
+	
+	
+	//router.HandleFunc("/sprints/add/{id:[0-9]+}", session.POSTAddSprint).Methods("POST")
 
 	n.Run(
 		fmt.Sprint(":", os.Getenv("PORT")),
