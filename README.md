@@ -34,7 +34,7 @@ Currently a lot of pages don't actually post back / get data from a database. Th
 
 You need the following env variables setup on your machine
 
-*CONNECTIONSTRING = "Your mysql connection string"
-*PORT = "Port to listen on for this app when started"
-*COOKIESTORE = "Cookie Secret"
-*DB who's schema matches the struct setup in the model directory
+1. CONNECTIONSTRING = "Your mysql connection string"
+2. PORT = "Port to listen on for this app when started"
+3. COOKIESTORE = "Cookie Secret"
+4. DB who's schema matches the struct setup in the model directory
