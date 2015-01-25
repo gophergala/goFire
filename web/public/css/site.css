@@ -161,6 +161,10 @@ i {
 	-moz-border-radius: 3px;  
 }
 
+.project:hover {
+	background: #f5f5f5;
+}
+
 /* project header timespan */
 body > div > div > a > h2 > span {
 	position: relative;
