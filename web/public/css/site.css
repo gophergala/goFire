@@ -172,8 +172,12 @@ body > div > div > a > h2 > span {
 }
 
 /* dashboard */
+.dashboard-chart-wrapper {
+	width: 40%;
+}
+
 .dashboard-grid-wrapper {
-	width: 850px;
+	width: 60%;
 	height: 400px;
 	overflow: scroll;
 }
