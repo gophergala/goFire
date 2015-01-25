@@ -36,10 +36,13 @@ func (c *ctx) People(w http.ResponseWriter, r *http.Request) {
 func (c *ctx) Sprints(w http.ResponseWriter, r *http.Request) {
 	ValidateRoute("sprints", w, r, "")
 
+	var sprint []model.Sprint
+	_ = c.Database.Select(&sprint, "SELECT * FROM Sprint ORDER BY StartDate ASC;")
+
 	p := model.Page{
 		"sprints",
 		"sprints",
-		nil,
+		&sprint,
 	}
 
 	c.r.HTML(w, http.StatusOK, "home/sprints", p)
