@@ -112,3 +112,18 @@ func (c *ctx) AddTask(w http.ResponseWriter, r *http.Request) {
 
 	c.r.HTML(w, http.StatusOK, "home/addtask", p)
 }
+
+func (c *ctx) AddProject(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id, _ := vars["id"]
+
+	ValidateRoute("projects/add", w, r, id)
+
+	p := model.Page{
+		"Add Project",
+		"projects",
+		nil,
+	}
+
+	c.r.HTML(w, http.StatusOK, "home/addproject", p)
+}

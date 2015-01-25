@@ -63,6 +63,7 @@ func main() {
 	router.HandleFunc("/account", session.Account)
 	router.HandleFunc("/analytics", session.Analytics)
 	router.HandleFunc("/projects/tasks/add/{id:[0-9]+}", session.AddTask).Methods("GET")
+	router.HandleFunc("/projects/add/{id:[0-9]+}", session.AddProject).Methods("GET")
 
 	n.Run(
 		fmt.Sprint(":", os.Getenv("PORT")),
