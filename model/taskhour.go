@@ -7,7 +7,7 @@ type TaskHour struct {
 	TaskID 			int			`db:"TaskID"`	
 	TaskHourTypeID  int   		`db:"TaskHourTypeID"`
 	PersonID 		int			`db:"PersonID"`
-	CreateDate   	time.time 	`db:"CreateDate"`
+	CreateDate   	time.Time 	`db:"CreateDate"`
 	CreatedPersonID int   		`db:"CreatedPersonID"`
 	TaskHourWorked  time.Time 	`db:"TaskHourWorked"`
 	TaskHourNote    string    	`db:"TaskHourNote"`

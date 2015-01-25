@@ -5,9 +5,9 @@ import "time"
 type TaskHourEstimated struct {
 	TaskHourEstimatedID	int			`db:"TaskHourEstimatedID"`
 	TaskID 				int			`db:"TaskID"`	
-	ProjectedHours  	decimal 	`db:"ProjectedHours"`
-	RemainingHours 		decimal		`db:"RemainingHours"`
+	ProjectedHours  	float32 	`db:"ProjectedHours"`
+	RemainingHours 		float32		`db:"RemainingHours"`
 	PersonID 			int   		`db:"PersonID"`
-	CreateDate   		time.time 	`db:"CreateDate"`
+	CreateDate   		time.Time 	`db:"CreateDate"`
 	CreatedPersonID 	int   		`db:"CreatedPersonID"`
 }
