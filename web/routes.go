@@ -113,6 +113,21 @@ func (c *ctx) AddTask(w http.ResponseWriter, r *http.Request) {
 	c.r.HTML(w, http.StatusOK, "home/addtask", p)
 }
 
+func (c *ctx) Task(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id, _ := vars["id"]
+
+	ValidateRoute("sprints/tasks", w, r, id)
+
+	p := model.Page{
+		"View Task",
+		"projects",
+		nil,
+	}
+
+	c.r.HTML(w, http.StatusOK, "home/task", p)
+}
+
 func (c *ctx) AddSprint(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, _ := vars["id"]
