@@ -7,7 +7,7 @@ import (
 	"strconv" 
 	
 	"time"
-	"idstc/model"
+	"goFire/model"
 
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"
@@ -40,17 +40,13 @@ func (c *ctx) People(w http.ResponseWriter, r *http.Request) {
 func (c *ctx) Sprints(w http.ResponseWriter, r *http.Request) {
 	ValidateRoute("sprints", w, r, "")
 
-	var sprint model.Sprint
-	err := c.Database.Get(&sprint, "SELECT * FROM Sprint LIMIT 1;")
-
-	fmt.Fprint(w, sprint)
-
-	fmt.Fprint(w, err)
+	var sprint []model.Sprint
+	_ = c.Database.Select(&sprint, "SELECT * FROM Sprint ORDER BY StartDate ASC;")
 
 	p := model.Page{
 		"sprints",
 		"sprints",
-		nil,
+		&sprint,
 	}
 
 	c.r.HTML(w, http.StatusOK, "home/sprints", p)
